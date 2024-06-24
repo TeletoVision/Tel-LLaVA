@@ -2,8 +2,9 @@
 
 ### Installation
 
-#### 1. **CUDA Version:**
+#### 1. **Enviornments:**
 Docker Image nvidia cuda == 12.0.1
+Nvidia RTX A6000
 
 #### 2. **Install the Anaconda virtual environment:**
 Get install file at Anaconda homepage.

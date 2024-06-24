@@ -2,39 +2,38 @@
 
 ### Installation
 
-#### 1. **Clone this repository and navigate to the LLaVA folder:**
+#### 1. **Install the Anaconda virtual environment.**
+Get install file at Anaconda homepage.
+```bash
+wget https://repo.anaconda.com/archive/Anaconda3-2024.02-1-Linux-x86_64.sh
+bash Anaconda3-2024.02-1-Linux-x86_64.sh
+export PATH=~/anaconda3/bin:$PATH
+conda
+```
+
+#### 2. **Clone LLaVA-NeXT repository and navigate to the LLaVA folder:**
 ```bash
 git clone https://github.com/LLaVA-VL/LLaVA-NeXT
 cd LLaVA-NeXT
 ```
 
-#### 2. **Install the inference package:**
+#### 3. **Install the inference package:**
 ```bash
 conda create -n llava python=3.10 -y
 conda activate llava
 pip install --upgrade pip  # Enable PEP 660 support.
 pip install -e ".[train]"
 ```
-
-### Project Navigation
-Please checkout the following page for more inference & evaluation details.
-
-#### - **LLaVA-NeXT: Stronger LLMs Supercharge Multimodal Capabilities in the Wild**
-- [LLaVA-NeXT-Image](./docs/LLaVA-NeXT.md): for image demo inference and evaluation of stronger LMMs using [lmms-eval](https://github.com/EvolvingLMMs-Lab/lmms-eval).
-
-
-#### - LLaVA-NeXT: A Strong Zero-shot Video Understanding Model
-- [LLaVA-NeXT-Video](./docs/LLaVA-NeXT-Video.md): for video inference and evaluation scripts.
-
-#### - LLaVA-NeXT: Tackling Multi-image, Video, and 3D in Large Multimodal Models
-- [LLaVA-NeXT-Interleave](./docs/LLaVA-NeXT-Interleave.md): for multi-image demo and evaluation scripts.
-
-## SGLang for SpeedUp Inference and Deployment
-
+#### 4. **Install SGLang repository in LLaVA folder:**
+SGLang for SpeedUp Inference and Deployment.
 We use [SGLang](https://github.com/sgl-project/sglang) to speed up inference and deployment of LLaVA-NeXT. You could make LLaVA-NeXT as a backend API service with SGLang.
+```bash
+git clone https://github.com/sgl-project/sglang.git
+cd sglang
 
-**Prepare Environment**:
-    Following the instruction in the [sglang](https://github.com/sgl-project/sglang?tab=readme-ov-file#install)
+pip install --upgrade pip
+pip install -e "python[all]"
+```
 
 ### LLaVA-NeXT (Image)
 
@@ -64,7 +63,6 @@ Checkout the HTTP Post/Get and SRT usage at [sglang/examples/usage/llava](https:
 
 ## Citation
 
-If you find it useful for your research and applications, please cite related papers/blogs using this BibTeX:
 ```bibtex
 @misc{li2024llavanext-strong,
     title={LLaVA-NeXT: Stronger LLMs Supercharge Multimodal Capabilities in the Wild},

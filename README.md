@@ -10,6 +10,8 @@ bash Anaconda3-2024.02-1-Linux-x86_64.sh
 export PATH=~/anaconda3/bin:$PATH
 conda
 ```
+If you had problem with conda:
+
 
 #### 2. **Clone LLaVA-NeXT repository and navigate to the LLaVA folder:**
 ```bash

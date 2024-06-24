@@ -3,7 +3,7 @@
 ### Installation
 
 #### 1. **CUDA Version:**
-docker image 12.0.1
+Docker Image nvidia cuda == 12.0.1
 
 #### 2. **Install the Anaconda virtual environment:**
 Get install file at Anaconda homepage.
@@ -46,10 +46,6 @@ pip install "sglang[all]"
 video_demo2.sh
 video_demo2.py
 ```
-
-### LLaVA-NeXT (Image)
-
-Checkout the HTTP Post/Get and SRT usage at [sglang/examples/usage/llava](https://github.com/sgl-project/sglang/blob/main/examples/usage/llava)
 
 ### LLaVA-NeXT (Video)
 

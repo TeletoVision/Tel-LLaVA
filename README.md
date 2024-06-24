@@ -2,39 +2,49 @@
 
 ### Installation
 
-#### 1. **Install the Anaconda virtual environment:**
+#### 1. **CUDA Version:**
+docker image 12.0.1
+
+#### 2. **Install the Anaconda virtual environment:**
 Get install file at Anaconda homepage.
 ```bash
 wget https://repo.anaconda.com/archive/Anaconda3-2024.02-1-Linux-x86_64.sh
 bash Anaconda3-2024.02-1-Linux-x86_64.sh
 export PATH=~/anaconda3/bin:$PATH
+conda config --set auto_activate_base True
+conda init
+source ~/.bashrc
 conda
 ```
-If you had problem with conda:
 
-
-#### 2. **Clone LLaVA-NeXT repository and navigate to the LLaVA folder:**
+#### 3. **Clone LLaVA-NeXT repository and navigate to the LLaVA folder:**
 ```bash
 git clone https://github.com/LLaVA-VL/LLaVA-NeXT
 cd LLaVA-NeXT
 ```
 
-#### 3. **Install the inference package:**
+#### 4. **Install the inference package:**
 ```bash
 conda create -n llava python=3.10 -y
 conda activate llava
 pip install --upgrade pip  # Enable PEP 660 support.
 pip install -e ".[train]"
 ```
-#### 4. **Install SGLang repository in LLaVA folder:**
+
+#### 5. **Install SGLang repository in LLaVA folder:**
 SGLang for SpeedUp Inference and Deployment.
 We use [SGLang](https://github.com/sgl-project/sglang) to speed up inference and deployment of LLaVA-NeXT. You could make LLaVA-NeXT as a backend API service with SGLang.
 ```bash
 git clone https://github.com/sgl-project/sglang.git
 cd sglang
 
-pip install --upgrade pip
-pip install -e "python[all]"
+pip install "sglang[all]"
+```
+
+#### 6. **Download modified code in video_demo.py, video_demo.sh:**
+```
+video_demo2.sh
+video_demo2.py
 ```
 
 ### LLaVA-NeXT (Image)
@@ -48,20 +58,10 @@ Checkout the HTTP Post/Get and SRT usage at [sglang/examples/usage/llava](https:
     ```
     cd PATH_TO/sglang
     ```
-- First node:
     ```sh
     bash examples/usage/llava_video/srt_example_llava_v.sh K 0 YOUR_VIDEO_PATH YOUR_MODEL_PATH FRAMES_PER_VIDEO
     (e.g. bash examples/usage/llava_video/srt_example_llava_v.sh K 0 examples/usage/llava_video/videos/Q98Z4OTh8RwmDonc.mp4 lmms-lab/LLaVA-NeXT-Video-7B-DPO 16)
     ```
-- Second node:
-    ```sh
-    bash examples/usage/llava_video/srt_example_llava_v.sh K 1 YOUR_VIDEO_PATH YOUR_MODEL_PATH FRAMES_PER_VIDEO
-    ```
-- The K node:
-    ```sh
-    bash examples/usage/llava_video/srt_example_llava_v.sh K K-1 YOUR_VIDEO_PATH YOUR_MODEL_PATH FRAMES_PER_VIDEO
-    ```
-
 
 ## Citation
 

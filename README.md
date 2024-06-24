@@ -3,7 +3,7 @@
 ### Installation
 
 #### 1. **Enviornments:**
-Docker Image nvidia cuda == 12.0.1
+Docker Image nvidia cuda == 12.0.1  
 Nvidia RTX A6000
 
 #### 2. **Install the Anaconda virtual environment:**
@@ -41,8 +41,15 @@ cd sglang
 
 pip install "sglang[all]"
 ```
+And we need opencv pakage for linux environment.
+```
+apt-get install libgl1-mesa-glx
+apt-get install libglib2.0-0
+pip install opencv-python
+```
 
-#### 6. **Download modified code in video_demo.py, video_demo.sh:**
+#### 6. **Download fixed code in video_demo.py, video_demo.sh:**
+We fix 'mlp_bias' and directory problems 
 ```
 video_demo2.sh
 video_demo2.py
@@ -51,13 +58,13 @@ video_demo2.py
 ### LLaVA-NeXT (Video)
 
 **Launch and Run on (K) Nodes**:
-- Go to sglang project
+- Run SGLang LLaVA-NeXT Video
+    ```python
+    python <ROOT PATH>/LLaVA-NeXT/sglang/examples/usage/llava_video/srt_example_llava_v.py
     ```
-    cd PATH_TO/sglang
-    ```
-    ```sh
-    bash examples/usage/llava_video/srt_example_llava_v.sh K 0 YOUR_VIDEO_PATH YOUR_MODEL_PATH FRAMES_PER_VIDEO
-    (e.g. bash examples/usage/llava_video/srt_example_llava_v.sh K 0 examples/usage/llava_video/videos/Q98Z4OTh8RwmDonc.mp4 lmms-lab/LLaVA-NeXT-Video-7B-DPO 16)
+- Run LLaVA-NeXT Video Demo
+    ```bash
+    scripts/video/demo/video_demo2.sh lmms-lab/LLaVA-NeXT-Video-7B-DPO vicuna_v1 40 2 True ./data/UCF-crime/edit_Abuse001_x264.mp4
     ```
 
 ## Citation

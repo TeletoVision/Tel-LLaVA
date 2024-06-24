@@ -1,4 +1,4 @@
-## Models & Scripts
+## Pipline & Scripts
 
 ### Installation
 

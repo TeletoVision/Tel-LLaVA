@@ -2,7 +2,7 @@
 
 ### Installation
 
-#### 1. **Install the Anaconda virtual environment.**
+#### 1. **Install the Anaconda virtual environment:**
 Get install file at Anaconda homepage.
 ```bash
 wget https://repo.anaconda.com/archive/Anaconda3-2024.02-1-Linux-x86_64.sh

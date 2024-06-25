@@ -3,7 +3,10 @@
 ### Installation
 
 #### 1. **Enviornments:**
-Docker Image nvidia cuda == 12.0.1  
+Docker Image nvidia cuda == 12.1.0
+```bash
+docker pull nvcr.io/nvidia/cuda:12.1.0-cudnn8-devel-ubuntu20.04
+```
 Nvidia RTX A6000
 
 #### 2. **Install the Anaconda virtual environment:**
@@ -64,6 +67,7 @@ video_demo2.py
     ```
 - Run LLaVA-NeXT Video Demo
     ```bash
+    # scripts/video/demo/video_demo2.sh에서 ROOT PATH 변경하기
     scripts/video/demo/video_demo2.sh lmms-lab/LLaVA-NeXT-Video-7B-DPO vicuna_v1 40 2 True ./data/UCF-crime/Abuse001_x264.mp4
     ```
 

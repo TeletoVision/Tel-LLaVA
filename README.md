@@ -66,9 +66,16 @@ video_demo2.py
     python <ROOT PATH>/LLaVA-NeXT/sglang/examples/usage/llava_video/srt_example_llava_v.py
     ```
 - Run LLaVA-NeXT Video Demo
+    *7B
     ```bash
     # scripts/video/demo/video_demo2.sh에서 ROOT PATH 변경하기 (현재 LLaVA-NeXT/)
     bash scripts/video/demo/video_demo2.sh lmms-lab/LLaVA-NeXT-Video-7B-DPO vicuna_v1 40 2 True ./data/UCF-crime/Abuse001_x264.mp4
+    ```
+
+   *7B
+   ```bash
+    # scripts/video/demo/video_demo2.sh에서 ROOT PATH 변경하기 (현재 LLaVA-NeXT/)
+    bash scripts/video/demo/video_demo_HK.sh lmms-lab/LLaVA-NeXT-Video-34B mistral_direct 40 2 True ./data/UCF-crime/Abuse001_x264.mp4
     ```
 
 ## Citation
